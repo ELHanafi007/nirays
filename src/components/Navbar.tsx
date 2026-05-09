@@ -80,7 +80,7 @@ export default function Navbar() {
           >
             {[
               { label: "Menu", href: "/menu" },
-              { label: "Our Craft", href: "#experience" },
+              { label: "Notre Savoir-Faire", href: "#experience" },
               { label: "Contact", href: "#" },
             ].map((item, i) => (
               <motion.div
