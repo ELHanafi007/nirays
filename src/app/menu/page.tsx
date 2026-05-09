@@ -11,7 +11,7 @@ const CATEGORY_LIST = CATEGORIES.filter((c) => c !== "All");
 
 export default function MenuPage() {
   const [activeCategory, setActiveCategory] = useState(CATEGORY_LIST[0]);
-  const sectionRefs = useRef<Map<string, HTMLDivElement>>(new Map());
+  const sectionRefs = useRef<Map<string, HTMLElement>>(new Map());
   const navRef = useRef<HTMLDivElement>(null);
   const isScrollingToRef = useRef(false);
 

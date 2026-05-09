@@ -45,7 +45,7 @@ function Particles() {
 
 // ── Split Text (COMPLEX multi-stage reveal) ────
 function SplitTitle({ text }: { text: string }) {
-  const letterVariants = {
+  const letterVariants: any = {
     hidden: (i: number) => ({
       opacity: 0,
       y: 120,
@@ -64,10 +64,10 @@ function SplitTitle({ text }: { text: string }) {
       transition: {
         duration: 1.4,
         delay: 0.4 + i * 0.12,
-        ease: [0.16, 1, 0.3, 1],
+        ease: [0.16, 1, 0.3, 1] as const,
         opacity: { duration: 0.8, delay: 0.4 + i * 0.12 },
         filter: { duration: 1, delay: 0.5 + i * 0.12 },
-        scale: { duration: 1.2, delay: 0.4 + i * 0.12, type: "spring", stiffness: 100, damping: 12 },
+        scale: { duration: 1.2, delay: 0.4 + i * 0.12, type: "spring" as const, stiffness: 100, damping: 12 },
       },
     }),
   };
@@ -365,7 +365,7 @@ function ReserveCTA() {
 
 // ── HOME PAGE ──────────────────────────────────
 export default function Home() {
-  const heroRef = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"],
