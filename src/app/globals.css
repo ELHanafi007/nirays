@@ -312,7 +312,7 @@ img { display:block; max-width:100%; }
 .menu-grid::-webkit-scrollbar { display: none; }
 
 .menu-card-link {
-  flex: 0 0 68vw;
+  flex: 0 0 55vw;
   scroll-snap-align: start;
   scroll-snap-stop: always;
   transition: transform 0.5s var(--ease-expo);
