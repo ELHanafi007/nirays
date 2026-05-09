@@ -163,11 +163,11 @@ function FeaturedSection() {
           transition={{ duration: 0.8 }}
         >
           <div>
-            <p className="featured-label">Chef&apos;s Selection</p>
-            <h2 className="featured-title">Signature Dishes</h2>
+            <p className="featured-label">Khtiyar l'Chef</p>
+            <h2 className="featured-title">Atbaq Khassa</h2>
           </div>
           <Link href="/menu" className="featured-link">
-            Full Menu <ArrowRight size={12} />
+            Lmenu Kamel <ArrowRight size={12} />
           </Link>
         </motion.div>
       </div>
@@ -213,10 +213,10 @@ function FeaturedSection() {
 
 // ── Stats ──────────────────────────────────────
 const STATS = [
-  { number: "12", suffix: "+", label: "Years of Craft" },
-  { number: "50", suffix: "+", label: "Signature Dishes" },
-  { number: "3", suffix: "", label: "Master Chefs" },
-  { number: "98", suffix: "%", label: "Return Guests" },
+  { number: "12", suffix: "+", label: "Snin d Tjariba" },
+  { number: "50", suffix: "+", label: "Atbaq Khassa" },
+  { number: "3", suffix: "", label: "Les Chefs" },
+  { number: "98", suffix: "%", label: "Kliyan Kayrje3" },
 ];
 
 function StatsSection() {
@@ -257,8 +257,8 @@ function AtmosphereSection() {
     <section className="atmosphere">
       <div className="container">
         <div className="atmosphere-header">
-          <p className="atmosphere-label">Experience</p>
-          <h2 className="atmosphere-title">The Atmosphere</h2>
+          <p className="atmosphere-label">Tjariba</p>
+          <h2 className="atmosphere-title">Ljaw</h2>
         </div>
         <div className="atmosphere-grid">
           {images.map((img, i) => (
@@ -320,22 +320,22 @@ function PhilosophySection() {
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            <p className="philosophy-label">The Philosophy</p>
+            <p className="philosophy-label">Lfilosofiya</p>
             <h2 className="philosophy-title">
-              Where Every Cut
+              Kolla T9ti3a
               <br />
               <span style={{ fontStyle: "italic", color: "var(--gold-light)" }}>
-                Tells a Story
+                3ndha 9essa
               </span>
             </h2>
             <p className="philosophy-text">
-              Our approach is rooted in the philosophy of constant excellence —
-              the very essence of Nirayas sushi & wok. From the temperature of the shari to
-              the angle of every knife stroke, each detail is meticulously
-              orchestrated to create moments of pure culinary transcendence.
+              Kanqaddmo likom makla m9adda b fann w t9an —
+              hadi hiya rro7 dyal Nirayas sushi & wok. Men l7arara dyal shari tal
+              chffa dyal lmos, kol tfassil mdrus bach n3tiwk
+              wa7d tjariba d lmakla makaynch b7alha.
             </p>
             <Link href="/menu" className="btn-outline">
-              <span>Explore Our Menu</span>
+              <span>Ktawf Lmenu Dyalna</span>
               <ArrowRight size={13} />
             </Link>
           </motion.div>
@@ -388,19 +388,19 @@ function ReserveCTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <p className="reserve-cta-label">Private Dining</p>
+          <p className="reserve-cta-label">Galsa Khassa</p>
           <h2 className="reserve-cta-title">
-            Reserve Your
+            Résiervi
             <br />
             <span style={{ fontStyle: "italic", color: "var(--gold-light)" }}>
-              Experience
+              Tjariba Dyalek
             </span>
           </h2>
           <p className="reserve-cta-sub">
-            Join us for an unforgettable evening of artisanal Japanese cuisine
+            Mra7ba bik t3ich m3ana lila manasich f lmakla lyabaniya l2assiliya
           </p>
           <a href="#" className="btn-outline">
-            <span>Make a Reservation</span>
+            <span>Résiervi Daba</span>
             <ArrowRight size={13} />
           </a>
         </motion.div>
@@ -453,7 +453,7 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.3 }}
           >
             <div className="hero-eyebrow anim-up d2">
-              <span>Artisanal Japanese Dining</span>
+              <span>Mra7ba bik f 3alam souchi</span>
             </div>
           </motion.div>
 
@@ -474,7 +474,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.3 }}
           >
-            The art of continuous perfection
+            Fann dyal lkamal
           </motion.p>
 
           <motion.div
@@ -483,7 +483,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 1.6 }}
           >
             <Link href="/menu" className="hero-cta">
-              <span>Explore Our Menu</span>
+              <span>Ktawf Lmenu Dyalna</span>
               <ArrowRight size={14} />
             </Link>
           </motion.div>
@@ -529,12 +529,12 @@ export default function Home() {
         <div className="container">
           <h2 className="footer-logo">Nirayas sushi & wok</h2>
           <div className="footer-links">
-            <Link href="/menu" className="footer-link">Menu</Link>
+            <Link href="/menu" className="footer-link">Lmenu</Link>
             <a href="#" className="footer-link">Instagram</a>
-            <a href="#" className="footer-link">Reservations</a>
-            <a href="#" className="footer-link">Contact</a>
+            <a href="#" className="footer-link">Résiervi</a>
+            <a href="#" className="footer-link">Tawasel M3ana</a>
           </div>
-          <p className="footer-copy">&copy; 2026 NIRAYAS. ALL RIGHTS RESERVED.</p>
+          <p className="footer-copy">&copy; 2026 NIRAYAS. L7O9O9 MA7FOUDA.</p>
         </div>
       </footer>
     </main>
