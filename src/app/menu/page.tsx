@@ -3,8 +3,8 @@
 import { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
 import MenuCard from "@/components/MenuCard";
+import Navbar from "@/components/Navbar";
 import { MENU_DATA, CATEGORIES } from "../data";
 
 const CATEGORY_LIST = CATEGORIES.filter((c) => c !== "All");
@@ -24,29 +24,38 @@ export default function MenuPage() {
   }, []);
 
   const scrollToCategory = useCallback((category: string) => {
-    const el = sectionRefs.current.get(category);
-    if (!el) return;
     isScrollingToRef.current = true;
     setActiveCategory(category);
-    const top = el.getBoundingClientRect().top + window.scrollY - 120;
-    window.scrollTo({ top, behavior: "smooth" });
-    setTimeout(() => { isScrollingToRef.current = false; }, 800);
+    
+    const element = sectionRefs.current.get(category);
+    if (element) {
+      const yOffset = -140; 
+      const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+    
+    setTimeout(() => {
+      isScrollingToRef.current = false;
+    }, 1000);
   }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         if (isScrollingToRef.current) return;
-        for (const entry of entries) {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const cat = entry.target.getAttribute("data-category");
-            if (cat) setActiveCategory(cat);
+            setActiveCategory(entry.target.id);
           }
-        }
+        });
       },
-      { rootMargin: "-30% 0px -60% 0px", threshold: 0 }
+      { rootMargin: "-150px 0px -60% 0px" }
     );
-    sectionRefs.current.forEach((el) => observer.observe(el));
+
+    sectionRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
     return () => observer.disconnect();
   }, []);
 
@@ -60,23 +69,7 @@ export default function MenuPage() {
 
   return (
     <main className="menu-page">
-      {/* Nav */}
-      <nav className="nav nav--scrolled" style={{ position: "fixed" }}>
-        <div className="container nav-inner">
-          <Link href="/" className="back-link">
-            <ArrowLeft size={14} />
-            <span>Retour</span>
-          </Link>
-          <Link
-            href="/"
-            className="nav-logo"
-            style={{ position: "absolute", left: "50%", transform: "translateX(-50%)" }}
-          >
-            Nirayas sushi & wok
-          </Link>
-          <div style={{ width: 80 }} />
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero */}
       <motion.div
