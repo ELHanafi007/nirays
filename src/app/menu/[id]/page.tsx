@@ -387,7 +387,7 @@ export default function ProductPage() {
             </div>
 
             {/* Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-12 lg:gap-16">
               {relatedItems.map((related, i) => (
                 <motion.div
                   key={related.id}
@@ -397,25 +397,25 @@ export default function ProductPage() {
                   transition={{ delay: i * 0.1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <Link href={`/menu/${related.id}`} className="group block">
-                    <div className="aspect-[3/4] relative overflow-hidden mb-8 border border-white/5 group-hover:border-gold/30 transition-colors duration-700">
+                    <div className="aspect-[3/4] relative overflow-hidden mb-4 border border-white/5 group-hover:border-gold/30 transition-colors duration-700">
                       <Image
                         src={related.image}
                         alt={related.name}
                         fill
-                        sizes="(max-width:768px) 100vw, 33vw"
+                        sizes="(max-width:768px) 50vw, 33vw"
                         className="object-cover transition-transform duration-[2s] group-hover:scale-110"
                         unoptimized={true}
                       />
                       <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-700" />
                       
                       {/* Hover Info */}
-                      <div className="absolute inset-x-0 bottom-0 p-8 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/80 to-transparent">
-                        <span className="text-2xl font-serif text-gold">{related.price}</span>
+                      <div className="absolute inset-x-0 bottom-0 p-4 md:p-8 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/80 to-transparent">
+                        <span className="text-lg md:text-2xl font-serif text-gold">{related.price}</span>
                       </div>
                     </div>
 
-                    <p className="text-gold/40 text-[10px] tracking-[0.4em] uppercase mb-2">{related.jpName}</p>
-                    <h3 className="text-2xl font-serif group-hover:text-gold transition-colors duration-500 uppercase tracking-tight">
+                    <p className="text-gold/40 text-[8px] md:text-[10px] tracking-[0.4em] uppercase mb-1 md:mb-2 line-clamp-1">{related.jpName}</p>
+                    <h3 className="text-sm md:text-2xl font-serif group-hover:text-gold transition-colors duration-500 uppercase tracking-tight line-clamp-1 md:line-clamp-none">
                       {related.name}
                     </h3>
                   </Link>

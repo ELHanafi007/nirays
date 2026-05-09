@@ -23,6 +23,7 @@ export default function Navbar() {
   }, [menuOpen]);
 
   return (
+    
     <>
       <motion.nav
         initial={{ y: -80, opacity: 0 }}
