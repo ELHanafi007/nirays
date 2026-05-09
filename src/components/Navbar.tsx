@@ -33,7 +33,7 @@ export default function Navbar() {
       >
         <div className="container nav-inner">
           <Link href="/" className="nav-logo">
-            Nirayas
+            Nirayas sushi & wok
           </Link>
 
           <div className="nav-links">

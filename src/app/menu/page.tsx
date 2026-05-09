@@ -70,9 +70,9 @@ export default function MenuPage() {
           <Link
             href="/"
             className="nav-logo"
-            style={{ position: "absolute", left: "50%", transform: "translateX(-50%)", whiteSpace: "nowrap" }}
+            style={{ position: "absolute", left: "50%", transform: "translateX(-50%)" }}
           >
-            Nirayas
+            Nirayas sushi & wok
           </Link>
           <div style={{ width: 80 }} />
         </div>
