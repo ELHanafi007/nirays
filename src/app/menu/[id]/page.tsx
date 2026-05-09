@@ -101,6 +101,7 @@ export default function ProductPage() {
                 sizes="(max-width:1024px) 100vw, 52vw"
                 className={`object-cover transition-all duration-[1.5s] ${imageLoaded ? "opacity-100 scale-100" : "opacity-0 scale-105"}`}
                 onLoad={() => setImageLoaded(true)}
+                unoptimized={true}
               />
             </div>
           </motion.div>
@@ -403,6 +404,7 @@ export default function ProductPage() {
                         fill
                         sizes="(max-width:768px) 100vw, 33vw"
                         className="object-cover transition-transform duration-[2s] group-hover:scale-110"
+                        unoptimized={true}
                       />
                       <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-700" />
                       

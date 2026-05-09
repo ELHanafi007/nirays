@@ -195,6 +195,7 @@ function FeaturedSection() {
                   fill
                   sizes="400px"
                   loading="lazy"
+                  unoptimized={true}
                 />
               </div>
               <div className="featured-card-body">
@@ -275,6 +276,7 @@ function AtmosphereSection() {
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
                 style={{ objectFit: "cover" }}
+                unoptimized={true}
               />
               <div className="atmosphere-overlay">
                 <span className="atmosphere-item-title">{img.title}</span>
@@ -306,6 +308,7 @@ function PhilosophySection() {
                 alt="Master Chef"
                 fill
                 sizes="(max-width:1024px) 100vw, 50vw"
+                unoptimized={true}
               />
             </div>
             <div className="philosophy-img-accent" />
@@ -433,6 +436,7 @@ export default function Home() {
               priority
               sizes="100vw"
               style={{ objectFit: "cover" }}
+              unoptimized={true}
             />
           </motion.div>
           <motion.div className="hero-overlay" style={{ opacity: heroOpacity }} />

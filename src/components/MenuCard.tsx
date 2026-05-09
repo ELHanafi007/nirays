@@ -24,6 +24,7 @@ export default function MenuCard({ item, index }: { item: MenuItem; index: numbe
             fill
             sizes="(max-width:768px) 75vw, 450px"
             loading="lazy"
+            unoptimized={true}
           />
           
           {/* Subtle Corner Accents */}
