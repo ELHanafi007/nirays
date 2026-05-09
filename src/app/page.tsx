@@ -244,6 +244,49 @@ function StatsSection() {
   );
 }
 
+// ── Atmosphere ─────────────────────────────────
+function AtmosphereSection() {
+  const images = [
+    { src: "/images/atmosphere_1.png", title: "The Sanctuary", span: "row-span-2" },
+    { src: "/images/atmosphere_2.png", title: "Pure Craft", span: "" },
+    { src: "/images/atmosphere_3.png", title: "The Ritual", span: "" },
+  ];
+
+  return (
+    <section className="atmosphere">
+      <div className="container">
+        <div className="atmosphere-header">
+          <p className="atmosphere-label">Experience</p>
+          <h2 className="atmosphere-title">The Atmosphere</h2>
+        </div>
+        <div className="atmosphere-grid">
+          {images.map((img, i) => (
+            <motion.div
+              key={i}
+              className={`atmosphere-item ${img.span}`}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: i * 0.15 }}
+            >
+              <Image
+                src={img.src}
+                alt={img.title}
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                style={{ objectFit: "cover" }}
+              />
+              <div className="atmosphere-overlay">
+                <span className="atmosphere-item-title">{img.title}</span>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ── Philosophy ─────────────────────────────────
 function PhilosophySection() {
   return (
@@ -461,6 +504,9 @@ export default function Home() {
 
       {/* ── GLOW LINE ────────────────────────── */}
       <div className="glow-line" />
+
+      {/* ── ATMOSPHERE ────────────────────────── */}
+      <AtmosphereSection />
 
       {/* ── STATS ────────────────────────────── */}
       <StatsSection />

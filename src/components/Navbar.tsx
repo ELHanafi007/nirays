@@ -47,6 +47,12 @@ export default function Navbar() {
             </a>
           </div>
 
+          <div className="nav-lang">
+            <button className="lang-btn lang-btn--active">EN</button>
+            <span className="lang-sep"></span>
+            <button className="lang-btn">JP</button>
+          </div>
+
           <Link href="/menu" className="nav-cta">
             Reserve
           </Link>
