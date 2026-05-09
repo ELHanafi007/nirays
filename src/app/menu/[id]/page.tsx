@@ -99,8 +99,7 @@ export default function ProductPage() {
                 fill
                 priority
                 sizes="(max-width:1024px) 100vw, 52vw"
-                className={`object-cover transition-all duration-[1.5s] ${imageLoaded ? "opacity-100 scale-100" : "opacity-0 scale-105"}`}
-                onLoad={() => setImageLoaded(true)}
+                className="object-cover transition-all duration-[1.5s] opacity-100 scale-100"
                 unoptimized={true}
               />
             </div>
