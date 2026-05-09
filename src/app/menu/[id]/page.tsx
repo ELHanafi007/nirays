@@ -49,15 +49,15 @@ export default function ProductPage() {
   if (!item) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white gap-6">
-        <h1 className="text-5xl font-serif">Tbaq Makaynch</h1>
+        <h1 className="text-5xl font-serif">Plat Introuvable</h1>
         <p className="text-gray-light text-sm tracking-widest uppercase">
-          Httbaq li kat9lleb 3lih makaynch.
+          L'article que vous recherchez n'existe pas.
         </p>
         <Link
           href="/menu"
           className="mt-4 px-8 py-3 border border-gold/30 text-gold text-xs uppercase tracking-[0.4em] hover:bg-gold hover:text-black transition-all duration-500"
         >
-          Rja3 Lmenu
+          Retour au Menu
         </Link>
       </div>
     );
@@ -120,7 +120,7 @@ export default function ProductPage() {
             <div className="flex items-center gap-3 bg-black/50 backdrop-blur-xl border border-white/10 px-5 py-2.5 rounded-full">
               <Star size={12} className="text-gold fill-gold" />
               <span className="text-[9px] tracking-[0.4em] uppercase text-white/70">
-                Khtiyar l'Chef
+                Sélection du Chef
               </span>
             </div>
           </motion.div>
@@ -174,7 +174,7 @@ export default function ProductPage() {
                 <div className="w-9 h-9 rounded-full border border-white/8 flex items-center justify-center group-hover:border-gold/30 transition-colors duration-500">
                   <ArrowLeft size={13} className="group-hover:-translate-x-0.5 transition-transform duration-300" />
                 </div>
-                Rja3 Lmenu
+                Retour au Menu
               </button>
             </motion.div>
 
@@ -208,17 +208,17 @@ export default function ProductPage() {
             >
               <div className="flex items-baseline gap-4">
                 <span className="text-7xl font-serif text-gold leading-none">{item.price}</span>
-                <span className="text-[10px] uppercase tracking-[0.4em] text-white/30">TVA m7souba</span>
+                <span className="text-[10px] uppercase tracking-[0.4em] text-white/30">TVA incl.</span>
               </div>
               
               <div className="mt-8 flex items-center gap-10 text-[9px] uppercase tracking-[0.3em] text-white/40">
                 <div className="flex items-center gap-2">
                   <Clock size={12} className="text-gold" />
-                  <span>Twjad: 15-20 Min</span>
+                  <span>Prép: 15-20 Min</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Fish size={12} className="text-gold" />
-                  <span>Mawad Tabi3iya</span>
+                  <span>Source Durable</span>
                 </div>
               </div>
             </motion.div>
@@ -251,7 +251,7 @@ export default function ProductPage() {
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-1.5 h-1.5 rounded-full bg-gold" />
                 <h4 className="text-[10px] uppercase tracking-[0.5em] text-gold font-semibold">
-                  Nkahat
+                  Profil de Saveur
                 </h4>
               </div>
 
@@ -278,9 +278,9 @@ export default function ProductPage() {
               {/* Provenance icons */}
               <div className="flex gap-6 mt-8 pt-6 border-t border-white/5">
                 {[
-                  { icon: Fish, label: "Sayd Lb7ar" },
-                  { icon: Flame, label: "Mchwi 3al lfakher" },
-                  { icon: Leaf, label: "Tabi3i" },
+                  { icon: Fish, label: "Pêche Sauvage" },
+                  { icon: Flame, label: "Grillé au Charbon" },
+                  { icon: Leaf, label: "Biologique" },
                 ].map(({ icon: Icon, label }) => (
                   <div key={label} className="group/i flex items-center gap-2.5">
                     <div className="w-9 h-9 rounded-full border border-white/6 flex items-center justify-center group-hover/i:border-gold/30 transition-colors duration-500 bg-white/[0.02]">
@@ -334,7 +334,7 @@ export default function ProductPage() {
                         transition={{ duration: 0.3 }}
                         className="flex items-center gap-2"
                       >
-                        Tzad <Star size={12} className="fill-black" />
+                        Ajouté <Star size={12} className="fill-black" />
                       </motion.span>
                     ) : (
                       <motion.span
@@ -345,7 +345,7 @@ export default function ProductPage() {
                         transition={{ duration: 0.3 }}
                         className="flex items-center gap-2"
                       >
-                        Zid lTtalab <ChevronRight size={14} />
+                        Ajouter à la Commande <ChevronRight size={14} />
                       </motion.span>
                     )}
                   </AnimatePresence>
@@ -370,17 +370,17 @@ export default function ProductPage() {
               <div className="max-w-2xl">
                 <p className="text-gold text-[11px] tracking-[0.7em] uppercase mb-6 flex items-center gap-4">
                   <span className="w-12 h-[1px] bg-gold/40" />
-                  Ri7la Fanniya
+                  Le Voyage Culinaire
                 </p>
                 <h2 className="text-5xl md:text-6xl font-serif leading-[1.1] uppercase">
-                  Kmel <br /> Tjariba Dyalek
+                  Complétez Votre <br /> Expérience
                 </h2>
               </div>
               <Link
                 href="/menu"
                 className="group inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-white/50 hover:text-gold transition-all duration-500 pb-2 border-b border-white/10 hover:border-gold/30"
               >
-                Rja3 Lmenu
+                Retour au Menu
                 <ArrowUpRight size={14} className="text-gold/50 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </Link>
             </div>
@@ -430,12 +430,12 @@ export default function ProductPage() {
         <div className="container">
           <h2 className="footer-logo">Nirayas sushi & wok</h2>
           <div className="footer-links">
-            <Link href="/" className="footer-link">Rja3</Link>
-            <Link href="/menu" className="footer-link">Lmenu</Link>
-            <a href="#" className="footer-link">Résiervi</a>
-            <a href="#" className="footer-link">Tawasel M3ana</a>
+            <Link href="/" className="footer-link">Accueil</Link>
+            <Link href="/menu" className="footer-link">Menu</Link>
+            <a href="#" className="footer-link">Réservations</a>
+            <a href="#" className="footer-link">Contact</a>
           </div>
-          <p className="footer-copy">&copy; 2026 NIRAYAS. L7O9O9 MA7FOUDA.</p>
+          <p className="footer-copy">&copy; 2026 NIRAYAS. TOUS DROITS RÉSERVÉS.</p>
         </div>
       </footer>
     </div>

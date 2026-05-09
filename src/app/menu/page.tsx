@@ -65,7 +65,7 @@ export default function MenuPage() {
         <div className="container nav-inner">
           <Link href="/" className="back-link">
             <ArrowLeft size={14} />
-            <span>Rja3</span>
+            <span>Retour</span>
           </Link>
           <Link
             href="/"
@@ -92,7 +92,7 @@ export default function MenuPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            Tachkila
+            La Collection
           </motion.p>
           <motion.h1
             className="menu-hero-title"
@@ -100,7 +100,7 @@ export default function MenuPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
-            Tachkila <br /> Assiliya
+            Sélection <br /> Artisanale
           </motion.h1>
           <motion.div
             className="menu-hero-line"
@@ -154,7 +154,7 @@ export default function MenuPage() {
                 </div>
                 <h2 className="menu-section-title">{category}</h2>
                 <p className="menu-section-count">
-                  {groupedMenu[category].length} atbaq
+                  {groupedMenu[category].length} plats
                 </p>
               </motion.div>
             </div>
@@ -178,12 +178,12 @@ export default function MenuPage() {
         <div className="container">
           <h2 className="footer-logo">Nirayas sushi & wok</h2>
           <div className="footer-links">
-            <Link href="/" className="footer-link">Rja3</Link>
+            <Link href="/" className="footer-link">Accueil</Link>
             <a href="#" className="footer-link">Instagram</a>
-            <a href="#" className="footer-link">Résiervi</a>
-            <a href="#" className="footer-link">Tawasel M3ana</a>
+            <a href="#" className="footer-link">Réservations</a>
+            <a href="#" className="footer-link">Contact</a>
           </div>
-          <p className="footer-copy">&copy; 2026 NIRAYAS. L7O9O9 MA7FOUDA.</p>
+          <p className="footer-copy">&copy; 2026 NIRAYAS. TOUS DROITS RÉSERVÉS.</p>
         </div>
       </footer>
     </main>

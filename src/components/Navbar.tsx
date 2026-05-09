@@ -38,24 +38,24 @@ export default function Navbar() {
 
           <div className="nav-links">
             <Link href="/menu" className="nav-link">
-              Lmenu
+              Menu
             </Link>
             <a href="#experience" className="nav-link">
-              L7erfa Dyalna
+              Notre Savoir-Faire
             </a>
             <a href="#" className="nav-link">
-              Tawasel M3ana
+              Contact
             </a>
           </div>
 
           <div className="nav-lang">
-            <button className="lang-btn lang-btn--active">MA</button>
+            <button className="lang-btn lang-btn--active">FR</button>
             <span className="lang-sep"></span>
             <button className="lang-btn">EN</button>
           </div>
 
           <Link href="/menu" className="nav-cta">
-            Résiervi
+            Réserver
           </Link>
 
           <button
