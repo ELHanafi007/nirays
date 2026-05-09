@@ -184,55 +184,60 @@ export default function ProductPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             >
-              <div className="flex items-center gap-4 mb-8">
-                <span className="text-gold text-[10px] tracking-[0.6em] uppercase font-medium">
+              <div className="flex items-center gap-4 mb-6">
+                <span className="text-gold text-[11px] tracking-[0.7em] uppercase font-semibold">
                   {item.category}
                 </span>
-                <div className="h-[1px] flex-1 bg-gradient-to-r from-gold/30 to-transparent" />
+                <div className="h-[1px] w-20 bg-gold/40" />
               </div>
-
-              <h1 className="hidden lg:block text-6xl xl:text-7xl font-serif leading-[0.9] uppercase tracking-tight mb-4">
+ 
+              <h1 className="text-6xl md:text-7xl xl:text-8xl font-serif leading-[0.85] uppercase tracking-[-0.02em] mb-4">
                 {item.name}
               </h1>
-              <p className="text-gold/30 text-2xl xl:text-3xl font-serif italic mb-10">
+              <p className="text-gold/40 text-3xl xl:text-4xl font-serif italic mb-12">
                 {item.jpName}
               </p>
             </motion.div>
-
-            {/* Price & meta */}
+ 
+            {/* Price & Floating Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.15, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="flex items-center gap-8 mb-12 flex-wrap"
+              className="relative mb-16"
             >
-              <span className="text-5xl font-serif text-gold leading-none">{item.price}</span>
-              <div className="h-10 w-[1px] bg-white/8 hidden sm:block" />
-              <div className="flex items-center gap-6 text-[9px] uppercase tracking-[0.2em] text-white/35">
-                <span className="flex items-center gap-1.5">
-                  <Clock size={11} className="text-gold/50" /> 15 min
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <MapPin size={11} className="text-gold/50" /> Seasonal
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <Award size={11} className="text-gold/50" /> Signature
-                </span>
+              <div className="flex items-baseline gap-4">
+                <span className="text-7xl font-serif text-gold leading-none">{item.price}</span>
+                <span className="text-[10px] uppercase tracking-[0.4em] text-white/30">Tax incl.</span>
+              </div>
+              
+              <div className="mt-8 flex items-center gap-10 text-[9px] uppercase tracking-[0.3em] text-white/40">
+                <div className="flex items-center gap-2">
+                  <Clock size={12} className="text-gold" />
+                  <span>Prep: 15-20 Min</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Fish size={12} className="text-gold" />
+                  <span>Sustainably Sourced</span>
+                </div>
               </div>
             </motion.div>
-
+ 
             {/* Description */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.3, duration: 0.8 }}
+              className="mb-16"
             >
-              <p className="text-white/70 text-lg leading-relaxed max-w-lg mb-6 font-serif italic">
+              <div className="w-12 h-[1px] bg-white/20 mb-8" />
+              <p className="text-white/80 text-xl md:text-2xl leading-relaxed max-w-xl mb-8 font-serif italic">
                 &ldquo;{item.description}&rdquo;
               </p>
-              <p className="text-white/35 text-sm leading-relaxed max-w-md mb-14">
-                Crafted with precision and reverence for tradition. Each element is carefully
-                balanced to deliver an authentic experience that honors the art of Japanese cuisine.
+              <p className="text-white/40 text-sm leading-relaxed max-w-lg">
+                Our master chefs dedicate years to perfecting the precise cut and temperature 
+                required for this signature dish. Each ingredient is sourced daily from Tokyo's 
+                Toyosu Market to ensure an unparalleled dining experience.
               </p>
             </motion.div>
 
@@ -353,68 +358,64 @@ export default function ProductPage() {
 
       {/* ═══════════ RELATED ITEMS ═══════════ */}
       {relatedItems.length > 0 && (
-        <section className="bg-[#050505] py-32 md:py-40 border-t border-white/5 relative overflow-hidden">
-          {/* Ambient glow */}
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/[0.03] rounded-full blur-[180px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+        <section className="bg-black py-32 md:py-48 border-t border-white/5 relative overflow-hidden">
+          {/* Background Text */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none opacity-[0.02] font-serif text-[30vw] whitespace-nowrap leading-none">
+            NIRAYAS
+          </div>
 
           <div className="container relative z-10">
             {/* Header */}
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 md:mb-24 gap-6">
-              <div>
-                <p className="text-gold text-[10px] tracking-[0.6em] uppercase mb-4 flex items-center gap-3">
-                  <span className="w-10 h-[1px] bg-gold/40" />
-                  You May Also Enjoy
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 md:mb-32 gap-8">
+              <div className="max-w-2xl">
+                <p className="text-gold text-[11px] tracking-[0.7em] uppercase mb-6 flex items-center gap-4">
+                  <span className="w-12 h-[1px] bg-gold/40" />
+                  The Culinary Journey
                 </p>
-                <h2 className="text-4xl md:text-5xl font-serif leading-tight">
-                  Continue the Journey
+                <h2 className="text-5xl md:text-6xl font-serif leading-[1.1] uppercase">
+                  Complete Your <br /> Experience
                 </h2>
               </div>
               <Link
                 href="/menu"
-                className="group inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.4em] text-white/60 hover:text-gold pb-2 border-b border-white/10 hover:border-gold/40 transition-all duration-500"
+                className="group inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-white/50 hover:text-gold transition-all duration-500 pb-2 border-b border-white/10 hover:border-gold/30"
               >
-                Full Menu
-                <ArrowUpRight size={13} className="text-gold/60 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-500" />
+                Back to Library
+                <ArrowUpRight size={14} className="text-gold/50 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </Link>
             </div>
 
             {/* Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
               {relatedItems.map((related, i) => (
                 <motion.div
                   key={related.id}
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-80px" }}
-                  transition={{ delay: i * 0.15, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ delay: i * 0.1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <Link href={`/menu/${related.id}`} className="group block">
-                    <div className="aspect-[4/5] relative overflow-hidden mb-6">
+                    <div className="aspect-[3/4] relative overflow-hidden mb-8 border border-white/5 group-hover:border-gold/30 transition-colors duration-700">
                       <Image
                         src={related.image}
                         alt={related.name}
                         fill
                         sizes="(max-width:768px) 100vw, 33vw"
-                        className="object-cover transition-transform duration-[1.2s] group-hover:scale-105"
+                        className="object-cover transition-transform duration-[2s] group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-700" />
-
-                      {/* Price float */}
-                      <div className="absolute bottom-5 left-5 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-                        <span className="text-lg font-serif text-white">{related.price}</span>
+                      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-700" />
+                      
+                      {/* Hover Info */}
+                      <div className="absolute inset-x-0 bottom-0 p-8 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/80 to-transparent">
+                        <span className="text-2xl font-serif text-gold">{related.price}</span>
                       </div>
-
-                      {/* Corner accents */}
-                      <div className="absolute top-4 left-4 w-3 h-3 border-t border-l border-white/15 group-hover:border-gold/40 transition-colors duration-500" />
-                      <div className="absolute bottom-4 right-4 w-3 h-3 border-b border-r border-white/15 group-hover:border-gold/40 transition-colors duration-500" />
                     </div>
 
-                    <h3 className="text-xl font-serif group-hover:text-gold transition-colors duration-500 mb-1">
+                    <p className="text-gold/40 text-[10px] tracking-[0.4em] uppercase mb-2">{related.jpName}</p>
+                    <h3 className="text-2xl font-serif group-hover:text-gold transition-colors duration-500 uppercase tracking-tight">
                       {related.name}
                     </h3>
-                    <p className="text-[10px] text-white/25 tracking-[0.4em] uppercase">
-                      {related.jpName}
-                    </p>
                   </Link>
                 </motion.div>
               ))}

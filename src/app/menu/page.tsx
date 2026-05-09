@@ -83,30 +83,32 @@ export default function MenuPage() {
         className="menu-hero"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 1 }}
       >
-        <motion.h1
-          className="menu-hero-title"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          Our Menu
-        </motion.h1>
-        <motion.p
-          className="menu-hero-sub"
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          A curated selection of seasonal dishes
-        </motion.p>
-        <motion.div
-          className="menu-hero-line"
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        />
+        <div className="container">
+          <motion.p
+            className="menu-hero-eyebrow"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+          >
+            The Collection
+          </motion.p>
+          <motion.h1
+            className="menu-hero-title"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          >
+            Artisanal <br /> Selection
+          </motion.h1>
+          <motion.div
+            className="menu-hero-line"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 1.2, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          />
+        </div>
       </motion.div>
 
       {/* Category Nav */}
@@ -128,7 +130,7 @@ export default function MenuPage() {
       </div>
 
       {/* Sections */}
-      <div className="container" style={{ paddingBottom: "4rem" }}>
+      <div className="menu-sections" style={{ paddingBottom: "8rem" }}>
         {CATEGORY_LIST.map((category, ci) => (
           <section
             key={category}
@@ -136,29 +138,33 @@ export default function MenuPage() {
             data-category={category}
             ref={(el) => { if (el) sectionRefs.current.set(category, el); }}
           >
-            <motion.div
-              className="menu-section-header"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="menu-section-num">
-                {String(ci + 1).padStart(2, "0")}
-              </span>
-              <span className="menu-section-label">
-                {String(ci + 1).padStart(2, "0")}
-              </span>
-              <h2 className="menu-section-title">{category}</h2>
-              <p className="menu-section-count">
-                {groupedMenu[category].length} dishes
-              </p>
-            </motion.div>
+            <div className="container">
+              <motion.div
+                className="menu-section-header"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="flex items-center gap-4 mb-2">
+                  <span className="text-gold text-[10px] tracking-[0.5em] uppercase">
+                    {String(ci + 1).padStart(2, "0")}
+                  </span>
+                  <div className="h-[1px] w-12 bg-gold/30" />
+                </div>
+                <h2 className="menu-section-title">{category}</h2>
+                <p className="menu-section-count">
+                  {groupedMenu[category].length} curated items
+                </p>
+              </motion.div>
+            </div>
 
-            <div className="menu-grid">
+            <div className="menu-grid scrollbar-hide" style={{ paddingLeft: "max(1.25rem, calc((100vw - 1400px) / 2 + 1.25rem))", paddingRight: "max(1.25rem, calc((100vw - 1400px) / 2 + 1.25rem))" }}>
               {groupedMenu[category].map((item, idx) => (
                 <MenuCard key={item.id} item={item} index={idx} />
               ))}
+              {/* Spacer for end of scroll */}
+              <div style={{ flex: "0 0 20vw", minWidth: "20vw" }} />
             </div>
           </section>
         ))}
